@@ -1,7 +1,7 @@
 let enemy;
 
-function Enemy(characterType,health,banter,goodRadio,darkness,anecdotes) {
-  this.characterType = characterType;
+function Enemy(enemyType,health,banter,goodRadio,darkness,anecdotes) {
+  this.enemyType = enemyType;
   this.health = health;
   this.banter = banter;
   this.goodRadio = goodRadio;
