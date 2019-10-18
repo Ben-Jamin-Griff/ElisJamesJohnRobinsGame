@@ -19,7 +19,7 @@ let gameManager = {
         break;
     }
     let getInterface = document.querySelector(".interface");
-    getInterface.innerHTML = '<img src="img/characters/' + characterType.toLowerCase() + '.jpg" class="img-character"><div><h3>' + characterType + '</h3><p>Health: ' + player.health + '</p><p>Banter: ' + player.banter + '</p><p>Good Radio: ' + player.goodRadio + '</p><p>Darkness: ' + player.darkness + '</p><p>Anecdotes: ' + player.anecdotes + '</p></div>';
+    getInterface.innerHTML = '<img src="img/characters/' + characterType.toLowerCase() + '.jpg" class="img-character"><div><h3>' + characterType + '</h3><p class="health-player">Health: ' + player.health + '</p><p>Banter: ' + player.banter + '</p><p>Good Radio: ' + player.goodRadio + '</p><p>Darkness: ' + player.darkness + '</p><p>Anecdotes: ' + player.anecdotes + '</p></div>';
   },
   setPreFight: function() {
     let getHeader = document.querySelector(".header");
@@ -35,7 +35,7 @@ let gameManager = {
     let getEnemy = document.querySelector(".enemy");
     // Create enemy
     let enemy00 = new Enemy("Radio X Listener", 100, 20, 10, 4, 10);
-    let enemy01 = new Enemy("Five Live Listener", 100, 30, 20, 5, 20);
+    let enemy01 = new Enemy("Five Live Listener", 100, 30, 40, 5, 40);
     let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(2));
     switch (chooseRandomEnemy) {
       case 0:
@@ -46,9 +46,7 @@ let gameManager = {
         break;
     }
     getHeader.innerHTML = '<p>Choose your move</P>';
-    getActions.innerHTML = '<a href="#" class= "btn-prefight" onclick="PlayerMoves.calcAttack()">Banter</a>';
-    console.log(chooseRandomEnemy);
-    console.log(enemy);
+    getActions.innerHTML = '<a href="#" class= "btn-prefight" onclick="playerMoves.calcAttack()">Banter</a>';
     getEnemy.innerHTML = '<img src="/img/enemies/' + enemy.enemyType.toLowerCase() + '.jpg" alt="' + enemy.enemyType + '" class="img-avatar"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health: ' + enemy.health + '</p><p>Banter: ' + enemy.banter + '</p><p>Good Radio: ' + enemy.goodRadio + '</p><p>Darkness: ' + enemy.darkness + '</p><p>Anecdotes: ' + enemy.anecdotes + '</p></div>';
   }
 }
